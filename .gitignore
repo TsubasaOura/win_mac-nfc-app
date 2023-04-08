@@ -1,0 +1,6 @@
+api/__pycache__
+api/lottery.db
+api/.env
+api/lottery-360514-50882d62107c.json
+app/.env
+
