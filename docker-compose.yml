@@ -1,16 +1,21 @@
-version: '3'
-
+version: "3.9"
 services:
-  api:
-    container_name: 'ST-API'
+  app:
     build:
       context: .docker
-      dockerfile: api.Dockerfile
+      dockerfile: app.Dockerfile
     volumes:
-      - ./api:/var/www/html
-    ports:
-      - '8000:8000'
-    command: uvicorn main:app --reload --host 0.0.0.0 --port 8000
+      # Workspace
+      - ./app:/app
+      # WSLg
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
     environment:
-      ST_USER: admin
-      ST_PASS: password
+      # WSLg
+      - DISPLAY=$DISPLAY
+      - WAYLAND_DISPLAY=$WAYLAND_DISPLAY
+      - XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR
+      - PULSE_SERVER=$PULSE_SERVER
+      # USB
+      - /dev/bus/usb:/dev/bus/usb:ro
+    privileged: true

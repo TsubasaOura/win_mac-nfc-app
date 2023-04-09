@@ -1,0 +1,1 @@
+9999999999{"name": "pyDes", "version": "2.0.1", "summary": "Pure python implementation of DES and TRIPLE DES encryption algorithm", "platform": "All", "requires_dist": null, "requires_python": null, "files": [{"file": "pyDes-2.0.1.tar.gz", "hash": "sha256:e2ab8e21d2b83e90d90dbfdcb6fb8ac0000b813238b7ecaede04f8435c389012"}], "yanked": false, "_cache_version": "1.1.0"}
